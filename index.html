@@ -1,0 +1,228 @@
+<!-- APA LU LIAT2 SUMBER KODE?, KODE DI TULIS OLEH HAMZAH WISNU DZAKY DAN CHATGPT(UNTUK API CALL)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>GROW A GARDEN INFO BY HAMZAH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #dbeafe 100%);
+            background-attachment: fixed;
+            color: #1f2937;
+            overflow-x: hidden;
+        }
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.2) 0%, transparent 50%),
+                              radial-gradient(circle at 40% 80%, rgba(219, 234, 254, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(0.5deg); }
+            50% { transform: translateY(0px) rotate(0deg); }
+            75% { transform: translateY(10px) rotate(-0.5deg); }
+        }
+        .ip-display {
+            animation: fadeInUp 1s ease-out;
+        }
+        .spinner {
+            border: 4px solid #dbeafe;
+            border-top: 4px solid #1e3a8a;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .icon-float {
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen">
+    <div class="animated-bg"></div>
+    <div class="relative z-10 container mx-auto px-4 py-8">
+        <header class="text-center mb-8 fade-in">
+            <h1 class="text-5xl font-bold text-white mb-2 drop-shadow-lg">
+                <i class="fas fa-seedling text-6xl icon-float mr-4"></i>
+                GROW A GARDEN INFO BY HAMZAH
+            </h1>
+            <p class="text-xl text-blue-100">Roblox Games Grow A Garden Info 2025 --Hamzah W.D</p>
+        </header>
+        <div id="ip-section" class="ip-display text-center mb-8 p-6 bg-white bg-opacity-20 rounded-xl shadow-lg backdrop-blur-md">
+            <h2 class="text-2xl font-semibold text-white mb-4"><i class="fas fa-globe icon-float mr-2"></i>Your Public IP Address:</h2>
+            <p id="ip-address" class="text-3xl font-mono bg-gray-100 bg-opacity-80 text-gray-900 px-4 py-2 rounded inline-block shadow"></p>
+        </div>
+        <div id="loading" class="text-center mb-8 hidden">
+            <div class="spinner mx-auto mb-4"></div>
+            <p class="text-xl text-white">Loading Garden Wisdom...</p>
+        </div>
+        <div id="content" class="hidden space-y-8">
+            <div class="card bg-white bg-opacity-90 p-8 rounded-2xl shadow-xl fade-in">
+                <div class="flex items-center justify-center mb-6">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/163ee07f-d4d8-488f-b2e5-e7a119734725.png" class="w-32 h-24 rounded-lg mr-4" alt="Lush garden with blooming flowers in various colors including roses, tulips, and sunflowers on a sunny spring day with butterflies flying around">
+                    <h2 class="text-3xl font-bold text-blue-900">Welcome to Your Gardening Journey</h2>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Discover expert tips, techniques, and inspiration to grow your own garden. From beginners to pros, Hamzah's guide covers everything from soil prep to harvesting.
+                </p>
+                <div class="flex flex-wrap justify-center mt-4">
+                    <span class="bg-blue-500 text-white px-4 py-2 rounded-full mx-2 mb-2"><i class="fas fa-hand-seedling mr-1"></i>Seed Starting</span>
+                    <span class="bg-blue-600 text-white px-4 py-2 rounded-full mx-2 mb-2"><i class="fas fa-cloud-rain mr-1"></i>Watering Tips</span>
+                    <span class="bg-blue-700 text-white px-4 py-2 rounded-full mx-2 mb-2"><i class="fas fa-bug mr-1"></i>Pest Control</span>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b5ea92b4-97d3-4bed-bfd5-aa408278887f.png" class="w-full max-w-4xl rounded-2xl shadow-xl mx-auto" alt="Vibrant vegetable garden in a suburban backyard with rows of tomatoes, lettuce, carrots, and herbs in neat raised beds under a clear blue sky">
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = async function() {
+            document.getElementById('ip-section').classList.add('hidden');
+            document.getElementById('loading').classList.remove('hidden');
+            try {
+                const ipRes = await fetch("https://api64.ipify.org?format=json");
+                const ipJson = await ipRes.json();
+                document.getElementById('ip-address').innerText = ipJson.ip;
+                document.getElementById('ip-section').classList.remove('hidden');
+                const res = await fetch("https://api.ammaricano.my.id/api/info/growagarden");
+                const json = await res.json();
+                const data = json.result.data;
+                setTimeout(() => {
+                    renderGardenData(data);
+                    document.getElementById('loading').classList.add('hidden');
+                    document.getElementById('content').classList.remove('hidden');
+                }, 2000);
+
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="text-red-600 text-center">
+                        <i class="fas fa-triangle-exclamation text-red-500 mr-2"></i>
+                        Gagal mengambil data dari API.
+                    </div>
+                `;
+            }
+        }
+        function renderGardenData(data) {
+            let html = `
+                <div class="card bg-white p-8 rounded-2xl shadow-xl mb-8">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4 text-center flex justify-center items-center gap-3">
+                        <i class="fas fa-leaf text-green-500 text-6xl icon-float"></i>
+                        Grow A Garden Data
+                    </h2>
+                    <p class="text-gray-700 text-center">Data lengkap dari API Grow a Garden.</p>
+                </div>
+            `;
+            const renderCategory = (title, icon, items) => {
+                if (!items || items.length === 0) return "";
+                let out = `
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4 flex items-center gap-3">
+                        <i class="${icon} text-5xl icon-float"></i>
+                        ${title}
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                `;
+                items.forEach(it => {
+                    out += `
+                        <div class="card bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all">
+                            <h4 class="text-xl font-bold text-green-900 flex items-center gap-2">
+                                <i class="fas fa-cube text-indigo-500"></i> ${it.name}
+                            </h4>
+                            <p class="text-gray-600"><i class="fas fa-box text-blue-500 mr-2"></i><b>Qty:</b> ${it.quantity}</p>
+                            <p class="text-gray-600"><i class="fas fa-tags text-pink-500 mr-2"></i><b>Type:</b> ${it.type}</p>
+                            <p class="text-gray-600"><i class="fas fa-layer-group text-purple-500 mr-2"></i><b>Category:</b> ${it.category}</p>
+                            <p class="text-gray-600"><i class="fas fa-check-circle text-green-500 mr-2"></i><b>Available:</b> ${it.available}</p>
+                            ${it.roleId ? `<p class="text-gray-600"><i class="fas fa-id-badge text-orange-500 mr-2"></i><b>Role ID:</b> ${it.roleId}</p>` : ""}
+                            <p class="text-gray-600"><i class="fas fa-clock text-gray-500 mr-2"></i><b>Last Updated:</b> ${it.lastUpdated}</p>
+                        </div>
+                    `;
+                });
+                out += `</div>`;
+                return out;
+            };
+            html += renderCategory("Seeds", "fas fa-seedling text-green-500", data.seeds);
+            html += renderCategory("Gear", "fas fa-tools text-gray-600", data.gear);
+            html += renderCategory("Eggs", "fas fa-egg text-yellow-500", data.eggs);
+            html += renderCategory("Cosmetics", "fas fa-magic text-pink-500", data.cosmetics);
+            html += renderCategory("Honey (Merchant Sprinklers)", "fas fa-burn text-amber-500", data.honey);
+            html += renderCategory("Events", "fas fa-calendar-day text-purple-600", data.events);
+            if (data.weather) {
+                html += `
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4 flex items-center gap-3">
+                        <i class="fas fa-cloud-sun-rain text-blue-500 text-5xl icon-float"></i>
+                        Current Weather
+                    </h3>
+                    <div class="card bg-white p-6 rounded-xl shadow mb-8">
+                        <p class="text-gray-600"><i class="fas fa-cloud text-blue-400 mr-2"></i><b>Type:</b> ${data.weather.type}</p>
+                        <p class="text-gray-600"><i class="fas fa-toggle-on text-green-500 mr-2"></i><b>Active:</b> ${data.weather.active}</p>
+                        <p class="text-gray-600"><i class="fas fa-bolt text-yellow-400 mr-2"></i><b>Effects:</b> ${data.weather.effects.join(", ")}</p>
+                        <p class="text-gray-600"><i class="fas fa-clock text-gray-500 mr-2"></i><b>Last Updated:</b> ${data.weather.lastUpdated}</p>
+                    </div>
+                `;
+            }
+            if (data.travelingMerchant) {
+                html += `
+                    <h3 class="text-2xl font-semibold text-green-700 mb-4 flex items-center gap-3">
+                        <i class="fas fa-store text-orange-500 text-5xl icon-float"></i>
+                        Traveling Merchant
+                    </h3>
+                    <div class="card bg-white p-6 rounded-xl shadow mb-8">
+                        <p class="text-gray-600"><i class="fas fa-user-tie text-indigo-500 mr-2"></i><b>Name:</b> ${data.travelingMerchant.merchantName}</p>
+                        <p class="text-gray-600"><i class="fas fa-door-open text-red-500 mr-2"></i><b>Arrived At:</b> ${data.travelingMerchant.arrivedAt}</p>
+                        <p class="text-gray-600"><i class="fas fa-door-closed text-green-600 mr-2"></i><b>Leaves At:</b> ${data.travelingMerchant.leavesAt}</p>
+                        <p class="text-gray-600"><i class="fas fa-boxes text-yellow-600 mr-2"></i><b>Items:</b></p>
+                        <ul class="list-disc ml-6">
+                            ${data.travelingMerchant.items.map(it => `<li>${it.name} (x${it.quantity})</li>`).join("")}
+                        </ul>
+                        <p class="text-gray-600"><i class="fas fa-info-circle text-blue-500 mr-2"></i><b>Description:</b> ${data.travelingMerchant.embedDescription}</p>
+                    </div>
+                `;
+            }
+            if (data.lastGlobalUpdate) {
+                html += `
+                    <div class="text-center text-sm text-gray-500 mt-6">
+                        <i class="fas fa-sync text-green-500 mr-1"></i> Last Global Update: ${data.lastGlobalUpdate}
+                    </div>
+                `;
+            }
+            document.getElementById('content').innerHTML = html;
+        }
+    </script>
+</body>
+</html>
